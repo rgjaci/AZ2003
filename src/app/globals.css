@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Removed --font-geist-mono from body */
+body {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White */
+    --foreground: 0 0% 3.9%; /* Near Black */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 0 0% 3.9%; /* Near Black */
+
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 0 0% 3.9%; /* Near Black */
+
+    --primary: 36 100% 50%; /* Vibrant Orange (#FFA500) */
+    --primary-foreground: 0 0% 10%; /* Dark text for high contrast on orange */
+
+    --secondary: 180 100% 25%; /* Teal (#008080) */
+    --secondary-foreground: 0 0% 98%; /* White text for contrast on teal */
+
+    --muted: 0 0% 96.1%; /* Light Gray */
+    --muted-foreground: 0 0% 45.1%; /* Mid Gray */
+
+    --accent: 0 0% 94%; /* Light Gray (#F0F0F0) */
+    --accent-foreground: 0 0% 9%; /* Near Black */
+
+    --destructive: 0 84.2% 60.2%; /* Default Red */
+    --destructive-foreground: 0 0% 98%; /* White */
+
+    --border: 0 0% 89.8%; /* Light Gray Border */
+    --input: 0 0% 89.8%; /* Light Gray Input */
+    --ring: 36 100% 50%; /* Vibrant Orange for focus rings */
+
+    --chart-1: 36 100% 50%; /* Orange */
+    --chart-2: 180 100% 25%; /* Teal */
+    --chart-3: 197 37% 24%; /* Dark Blue/Gray */
+    --chart-4: 43 74% 66%; /* Yellowish */
+    --chart-5: 27 87% 67%; /* Light Orange */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%; /* Very Light Gray */
+    --sidebar-foreground: 240 5.3% 26.1%; /* Dark Gray */
+    --sidebar-primary: 36 100% 50%; /* Vibrant Orange */
+    --sidebar-primary-foreground: 0 0% 10%; /* Dark Text */
+    --sidebar-accent: 0 0% 94%; /* Light Gray (#F0F0F0) */
+    --sidebar-accent-foreground: 0 0% 9%; /* Near Black */
+    --sidebar-border: 0 0% 89.8%; /* Light Gray Border */
+    --sidebar-ring: 36 100% 50%; /* Vibrant Orange */
+  }
+
+  .dark {
+    /* Define dark mode variables if needed in the future */
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 36 100% 55%; /* Slightly lighter orange for dark mode */
+    --primary-foreground: 0 0% 10%;
+    --secondary: 180 80% 35%; /* Slightly lighter teal for dark mode */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 36 100% 55%;
+    --chart-1: 36 100% 55%;
+    --chart-2: 180 80% 35%;
+    --chart-3: 197 30% 30%;
+    --chart-4: 43 70% 70%;
+    --chart-5: 27 80% 70%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 36 100% 55%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 36 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Removed --font-geist-mono */
+    font-family: var(--font-geist-sans), sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+  h1 { @apply text-4xl lg:text-5xl; }
+  h2 { @apply text-3xl lg:text-4xl; }
+  h3 { @apply text-2xl lg:text-3xl; }
+  p { @apply leading-7; }
+}
+
+/* Sponsor logo animation */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
