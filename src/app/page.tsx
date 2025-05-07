@@ -84,6 +84,7 @@ export default function Home() {
                 height={400}
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
                 data-ai-hint="diverse group happy community"
+                priority
               />
             <div className="space-y-4">
               <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm text-secondary-foreground">
