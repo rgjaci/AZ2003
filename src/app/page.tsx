@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { FileText, Users, HeartHandshake, PiggyBank, Briefcase, Megaphone } from 'lucide-react';
+import { FileText, Users, HeartHandshake, PiggyBank, Briefcase, Megaphone, ChevronDown } from 'lucide-react';
 import { DigitalAssistant } from '@/components/digital-assistant';
 
 const services = [
@@ -52,25 +52,31 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center">
       {/* Hero Section - Digital Assistant */}
-      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-b from-orange-100 via-white to-white dark:from-orange-900/20 dark:via-background dark:to-background">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-primary">
-                Your Bridge to U.S. Citizenship
-              </h1>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                Ask our AI assistant anything about the naturalization process.
-              </p>
-            </div>
-            <div className="w-full max-w-xl">
-              <DigitalAssistant />
-            </div>
-             <p className="text-xs text-muted-foreground">
-              Sign up to save chat history and track progress.
+      <section className="relative w-full min-h-screen flex flex-col justify-center items-center py-12 md:py-16 lg:py-20 bg-gradient-to-b from-orange-100 via-white to-white dark:from-orange-900/20 dark:via-background dark:to-background">
+        <div className="container px-4 md:px-6 flex flex-col items-center justify-center text-center flex-grow">
+          <div className="space-y-2">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-primary">
+              Your Bridge to U.S. Citizenship
+            </h1>
+            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+              Ask our AI assistant anything about the naturalization process.
             </p>
           </div>
+          <div className="w-full max-w-xl mt-8">
+            <DigitalAssistant />
+          </div>
+           <p className="text-xs text-muted-foreground mt-2">
+            Sign up to save chat history and track progress.
+          </p>
         </div>
+        <a
+          href="#about"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-muted-foreground hover:text-primary transition-colors animate-bounce z-10"
+          aria-label="Scroll to explore more content"
+        >
+          <span className="text-sm">Scroll to Explore</span>
+          <ChevronDown className="w-6 h-6 mt-1" />
+        </a>
       </section>
 
       {/* About Section */}
@@ -84,7 +90,6 @@ export default function Home() {
                 height={400}
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
                 data-ai-hint="diverse group happy community"
-                priority
               />
             <div className="space-y-4">
               <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm text-secondary-foreground">
